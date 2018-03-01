@@ -6,7 +6,7 @@
 #word-display {
     background-color: lightblue;
     height: 200px;
-    width: 600px;
+    width: 800px;
 
     display: flex;
     flex-flow: row nowrap;
@@ -19,4 +19,10 @@
     font-weight: bold;
     font-size: 3em;
     padding: 0 .25em;
+    text-align: center;
+
+    box-sizing: border-box;
+    width: 1.5em;
+
+    border: 1px solid black;
 }
