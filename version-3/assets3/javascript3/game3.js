@@ -18,7 +18,7 @@ newWord();
 //set up board
 updateField("guessed-letters",guessedArray);
 updateField("guesses-left",guessesLeft);
-updateField('message-text', "Press any key to get started")
+updateField('message-text', "Press a key to guess a letter")
 
 //guessing letters
 //start of on-key-up function ---------------------------------------------------------
@@ -41,7 +41,9 @@ document.onkeyup = function(event){
     //check if the key is a letter, otherwise tell them to pick a letter
     if(isLetter(userGuess)==false){
         console.log("not a letter")
-        updateField('message-text', "That's not a letter")
+        updateField('message-text', "That's not a valid guess, please choose a letter")
+        //changed message board background color to orange
+        document.getElementById("message-board").style.backgroundColor = "#ecb43d"
         return;
     }
 
@@ -49,11 +51,15 @@ document.onkeyup = function(event){
     if(guessedArray.indexOf(userGuess) >= 0){
         console.log("you already guessed that letter");
         updateField('message-text', "You already guessed that letter")
+        //changed message board background color to orange
+        document.getElementById("message-board").style.backgroundColor = "#ecb43d"
         return;
     }
       
     //check if letter is in the word (i.e. if they guessed correctly)
     if(currentWord.indexOf(userGuess) >= 0){
+        //changed message board background color to blue
+        document.getElementById("message-board").style.backgroundColor = "#3dbaec"
         // tell user they guessed right
         updateField("message-text", "You guessed '"+userGuess+ " ' <br> CORRECT!");
         //set guessedRight to true 
@@ -62,6 +68,8 @@ document.onkeyup = function(event){
         placeLetter();
     
      }else{
+        //changed message board background color to red
+        document.getElementById("message-board").style.backgroundColor = "#fd634e"
         //tell usere they guessed wrong
         updateField("message-text","You guessed '"+userGuess+ "' <br> WRONG!");
         //set guessedRight to false
@@ -90,7 +98,8 @@ document.onkeyup = function(event){
     //if the guesses is zero, then you lose the game... give option to start over...
     //check if they ran out of guesses
     if(guessesLeft <= 0){
-        updateField("message-text", "You didn't get this word... <br> Press space to continue"); 
+        updateField("message-text", "You didn't get this word... <br> Press space to continue");
+        revealWord(); 
         stopGame = true;
         //newWord();
         
@@ -103,13 +112,16 @@ function newWord(){
     console.log(wordIndex)
     console.log(wordBank.length)
     if(wordIndex >= wordBank.length){
-        updateField("message-text", "Aww shucks, we're all out of words <br> You got "+wins+" out of 8 right!");
+        //changed message board background color to blue
+        document.getElementById("message-board").style.backgroundColor = "#3dbaec"
+        updateField("message-text", "Aww shucks, we're all out of words <br> You got "+wins+" out of "+wordBank.length+" right!");
         return;
     }
 
     currentWord=wordBank[wordIndex];
     wordDisplay.innerHTML = createDisplay(currentWord);
-
+    //changed message board background color to blue
+    document.getElementById("message-board").style.backgroundColor = "#3dbaec"
     //upddate message board
     updateField("message-text", "Next Word!")
     //resetting parameters
@@ -178,6 +190,17 @@ function resetDrawing(){
     for(var i=1; i < 7; i++){
         var id = "body-part-"+i;
         document.getElementById(id).style.display = "none";
+    }
+}
+
+function revealWord(){
+    for(var i=0; i < currentWord.length; i++){
+        //if the letter matches....
+        if(guessedArray.indexOf(currentWord[i]) < 0){
+            document.getElementById('position-'+(i+1)).innerHTML = currentWord[i];
+            document.getElementById('position-'+(i+1)).style.color = "red";
+
+        }
     }
 }
 

@@ -19,6 +19,7 @@
 
 #message-board {
     background-color: #3dbaec;
+    -background-color: #fd634e;
     height: 150px;
     width: 100%;
     border: 2px solid black;
