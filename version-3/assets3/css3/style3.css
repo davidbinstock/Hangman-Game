@@ -71,11 +71,18 @@
     border: 1px solid black;
 }
 
+.score-drawing-wrapper{
+    -background-color: coral;
+    display: flex;
+}
+
 .scoreboard{
+    -background-color: lightblue;
     font-family: 'Arvo', serif;
     font-size: 1.25em;
 
     padding-top: 2em;
+    flex-grow: 1;
     
     display: flex;
     justify-content: space-between;
@@ -92,9 +99,43 @@
     -background-color: violet;
     width: 100px;
     height: 100px;
-    margin: 20px 0;
-    display: flex;
     position: relative;
+    margin: 25px 0;
+}
+
+.gallows-main{
+    height: 130%;
+    width: 40%;
+    border: 3px solid black;
+    border-color: black transparent transparent black;
+
+    position: absolute;
+    top: -15%;
+    left: 8%;
+}
+
+.gallows-base{
+    height: 0;
+    width: 80%;
+    border: 3px solid black;
+
+    position: absolute;
+    bottom: -22%;
+    left: 0;   
+}
+
+.gallows-rope{
+    height: 19%;
+    width: 0;
+    border: 1.5px solid black;
+
+    position: absolute;
+    top: -15%;
+    left: 51%;   
+}
+
+.body-part{
+    display: none;
 }
 
 .head{
@@ -106,9 +147,6 @@
     position: absolute;
     top: 5%;
     left: 37.5%;
-
-    display: none;
-
 }
 
 .torso{
@@ -119,9 +157,6 @@
     position: absolute;
     top: 32.5%;
     left: 50%;
-
-    display: none;
-
 }
 
 .arm-1{
@@ -134,8 +169,6 @@
     position: absolute;
     top: 42.5%;
     left: 25%;
-
-    display: none;
 }
 
 .arm-2{
@@ -148,8 +181,6 @@
     position: absolute;
     top: 42.5%;
     left: 50%;
-
-    display: none;
 }
 
 .leg-1{
@@ -161,8 +192,6 @@
     position: absolute;
     top: 83%;
     left: 26%;
-
-    display: none;
 }
 
 .leg-2{
@@ -174,6 +203,4 @@
     position: absolute;
     top: 83%;
     left: 44%;
-
-    display: none;
 }
