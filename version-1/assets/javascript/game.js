@@ -34,8 +34,6 @@ document.onkeyup = function(event){
         return;
     }
 
-     
-    
     //reset the guessedRight value so that loop can properly moniter if this guess was correct
     guessedRight = false;
 

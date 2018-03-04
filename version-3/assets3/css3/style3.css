@@ -1,0 +1,71 @@
+@font-face {
+    font-family: "musicFont";
+    src: url("../fonts/music.TTF");
+}
+
+.hangman {
+    font-family: "musicFont";
+    font-size: 4em;
+    text-align: center;
+    margin: .25em;
+}
+.game-wrapper{
+    -border: 1px solid black;
+    max-width: 800px;
+    width:100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+#message-board {
+    background-color: #3dec4c;
+    height: 100px;
+    width: 100%;
+    border: 2px solid black;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+#message-text{
+    font-family: 'Arvo', serif;
+    font-size: 2em;
+}
+
+.current-word{
+    -background-color: #a2cdff;
+    
+    font-family: 'Arvo', serif;
+    font-size: 2em;
+    text-align: center;
+    padding-top: 10px;
+}
+
+
+#word-display {
+    -background-color: #a2cdff;
+    width: 100%;
+    padding: 1em 0;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.letter-holder{
+    font-family: 'Arvo', serif;
+    font-weight: bold;
+    font-size: 3em;
+    padding: 0 .25em;
+    text-align: center;
+
+    box-sizing: border-box;
+    width: 1.5em;
+
+    border: 1px solid black;
+}

@@ -1,0 +1,22 @@
+.marquee{
+    background-color: violet;
+    width: 500px;
+    box-sizing: border-box;
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .message-board{
+    background-color: lightblue;
+    width: 500px;
+    box-sizing: border-box;
+    padding: 20px 0;
+    text-align: center;
+  }
+  .score-board{
+    background-color: lightgreen;
+    width: 150px;
+    box-sizing: border-box;
+    padding: 10px 10px;
+    
+  }

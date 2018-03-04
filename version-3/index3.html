@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>V3-Hangman</title>
+
+    <!--linking css files: "reset" first, then "style"-->
+    <link rel="stylesheet" href="./assets3/css3/reset.css">
+    <link rel="stylesheet" href="./assets3/css3/style3.css">
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Bowlby+One+SC|Fredericka+the+Great" rel="stylesheet">
+        <!-- font-family: 'Bowlby One SC', cursive; -->
+        <!-- font-family: 'Fredericka the Great', cursive; -->
+        <!-- font-family: 'Arvo', serif; -->
+</head>
+<body>
+    <div class="hangman">Hangman</div>
+    <div class="game-wrapper">
+        <div id="message-board"><div id="message-text"></div></div>
+        <div class="title current-word">Current Word: </div>
+        <div id="word-display">
+            <div class="letter-holder">_</div>
+            <div class="letter-holder">Placeholder</div>
+            <div class="letter-holder">_</div>
+        </div>
+        <div>Wins: <span id="wins-text"></span></div>
+        <div>Guesses Left: <span id="guesses-left"></span></div>
+        <div>Letters Guessed: <span id="guessed-letters">_</span></div>
+    </div>
+
+
+    <!-- linking javascript file -->
+    <script src="./assets3/javascript3/game3.js"></script>
+</body>
+</html>
