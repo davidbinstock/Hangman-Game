@@ -96,6 +96,10 @@
     text-align: center;
 }
 
+/* ========================================================= */
+/* ======================hangman image====================== */
+/* ========================================================= */
+
 #drawing{
     -background-color: violet;
     width: 100px;
@@ -204,4 +208,56 @@
     position: absolute;
     top: 83%;
     left: 44%;
+}
+/* ========================================================= */
+/* =====adding smoe media queries to make it responsive===== */
+/* ========================================================= */
+
+@media screen and (max-width: 890px){
+.game-wrapper{
+    -background-color: coral;  
+}
+
+.hangman {
+    font-size: 10vw;
+}
+
+.game-wrapper{
+    width:85%;
+}
+
+#message-board{
+    height:15vw;
+}
+
+#message-text{
+    font-family: 'Arvo', serif;
+    font-size: 5vw;
+    line-height: 1.5em;
+}
+
+.current-word{
+    font-size: 8vw;
+}
+
+.letter-holder{
+    font-size: 7vw;
+    -padding: 0 .25em;
+
+    width: 1.5em;
+}
+
+.score-drawing-wrapper{
+    flex-flow: column nowrap;
+}
+
+.scoreboard {
+    font-size: 4vw;
+}
+
+#drawing{
+    margin: 25px auto;
+}
+
+
 }
