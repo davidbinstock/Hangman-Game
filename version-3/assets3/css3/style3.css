@@ -79,10 +79,101 @@
     
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .scoreboard-section {
     flex:1 0 0;
     height: 3em;
     text-align: center;
+}
+
+#drawing{
+    -background-color: violet;
+    width: 100px;
+    height: 100px;
+    margin: 20px 0;
+    display: flex;
+    position: relative;
+}
+
+.head{
+    height: 25%;
+    width: 25%;
+    border: 2px solid black;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 5%;
+    left: 37.5%;
+
+    display: none;
+
+}
+
+.torso{
+    height:37.5%;
+    width: 0;
+    border: 1.5px solid black;
+
+    position: absolute;
+    top: 32.5%;
+    left: 50%;
+
+    display: none;
+
+}
+
+.arm-1{
+    width: 25%;
+    height: 0;
+    border: 1.5px solid black;
+    -margin: 0 10px;
+    transform: rotate(30deg);
+
+    position: absolute;
+    top: 42.5%;
+    left: 25%;
+
+    display: none;
+}
+
+.arm-2{
+    width: 25%;
+    height: 0;
+    border: 1.5px solid black;
+    -margin: 0 10px;
+    transform: rotate(-30deg);
+
+    position: absolute;
+    top: 42.5%;
+    left: 50%;
+
+    display: none;
+}
+
+.leg-1{
+    width: 30%;
+    height: 0;
+    border: 1.5px solid black;
+    transform: rotate(-60deg);
+
+    position: absolute;
+    top: 83%;
+    left: 26%;
+
+    display: none;
+}
+
+.leg-2{
+    width: 30%;
+    height: 0;
+    border: 1.5px solid black;
+    transform: rotate(60deg);
+
+    position: absolute;
+    top: 83%;
+    left: 44%;
+
+    display: none;
 }

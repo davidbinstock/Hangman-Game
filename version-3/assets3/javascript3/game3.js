@@ -28,6 +28,7 @@ document.onkeyup = function(event){
         if(event.code == "Space"){
             wordIndex++;
             newWord();
+            resetDrawing();
             return;
         }else{
             return;
@@ -69,6 +70,8 @@ document.onkeyup = function(event){
         guessesLeft--;
         //update guesses left
         updateField("guesses-left",guessesLeft);
+        //draw next body part
+        drawBodyPart();
      }
 
     //update letters guessed array
@@ -163,4 +166,20 @@ function placeLetter(){
         }
     }
 }
+
+function drawBodyPart(){
+    for(var i=1; i <= 6-guessesLeft; i++){
+        var id = "body-part-"+i;
+        document.getElementById(id).style.display = "block";
+    }
+}
+
+function resetDrawing(){
+    for(var i=1; i < 7; i++){
+        var id = "body-part-"+i;
+        document.getElementById(id).style.display = "none";
+    }
+}
+
+
 
