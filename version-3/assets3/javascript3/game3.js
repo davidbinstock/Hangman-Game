@@ -54,7 +54,7 @@ document.onkeyup = function(event){
     //check if letter is in the word (i.e. if they guessed correctly)
     if(currentWord.indexOf(userGuess) >= 0){
         // tell user they guessed right
-        updateField("message-text", "you guessed '"+userGuess+ "'. That's correct!");
+        updateField("message-text", "You guessed '"+userGuess+ " ' <br> CORRECT!");
         //set guessedRight to true 
         guessedRight = true;
         //display correct letters on the board
@@ -62,7 +62,7 @@ document.onkeyup = function(event){
     
      }else{
         //tell usere they guessed wrong
-        updateField("message-text","you guessed '"+userGuess+ "'. WRONG!");
+        updateField("message-text","You guessed '"+userGuess+ "' <br> WRONG!");
         //set guessedRight to false
         guessedRight = false;
         //decrease guesses by 1
@@ -77,7 +77,7 @@ document.onkeyup = function(event){
     
     //check if they solved the word
     if(lettersCorrect >= currentWord.length){
-        updateField("message-text", "YOU WIN!! <br> press space to continue");
+        updateField("message-text", "You got it! Nice job!! <br> Press space to continue");
         stopGame = true;
         wins++;
         updateField("wins-text", wins)
@@ -87,7 +87,7 @@ document.onkeyup = function(event){
     //if the guesses is zero, then you lose the game... give option to start over...
     //check if they ran out of guesses
     if(guessesLeft <= 0){
-        updateField("message-text", "YOU LOOSE, SIR!! I SAID GOOD DAY!! <br> press space to continue"); 
+        updateField("message-text", "You didn't get this word... <br> Press space to continue"); 
         stopGame = true;
         //newWord();
         
@@ -100,7 +100,7 @@ function newWord(){
     console.log(wordIndex)
     console.log(wordBank.length)
     if(wordIndex >= wordBank.length){
-        updateField("message-text", "all out of words <br> you got "+wins+" out of 8 words right!");
+        updateField("message-text", "Aww shucks, we're all out of words <br> You got "+wins+" out of 8 right!");
         return;
     }
 
@@ -108,7 +108,7 @@ function newWord(){
     wordDisplay.innerHTML = createDisplay(currentWord);
 
     //upddate message board
-    updateField("message-text", "Next Word! Press any key to get started")
+    updateField("message-text", "Next Word!")
     //resetting parameters
     guessedArray = [];
     updateField("guessed-letters",guessedArray);
@@ -163,3 +163,4 @@ function placeLetter(){
         }
     }
 }
+
