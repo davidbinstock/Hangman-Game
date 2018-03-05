@@ -16,9 +16,10 @@ var stopGame = false;
 var wordIndex = 0;
 newWord();
 //set up board
-updateField("guessed-letters",guessedArray);
+updateLettersGuessedField();
 updateField("guesses-left",guessesLeft);
-updateField('message-text', "Press a key to guess a letter")
+updateField("wins-text", wins);
+updateField('message-text', "Press a key to guess a letter");
 
 //guessing letters
 //start of on-key-up function ---------------------------------------------------------
@@ -77,14 +78,14 @@ document.onkeyup = function(event){
         //decrease guesses by 1
         guessesLeft--;
         //update guesses left
-        updateField("guesses-left",guessesLeft);
+        updateLettersGuessedField();
         //draw next body part
         drawBodyPart();
      }
 
     //update letters guessed array
     guessedArray.push(userGuess);
-    updateField("guessed-letters",guessedArray);
+    updateLettersGuessedField();
     
     //check if they solved the word
     if(lettersCorrect >= currentWord.length){
@@ -117,7 +118,6 @@ function newWord(){
         updateField("message-text", "Aww shucks, we're all out of words <br> You got "+wins+" out of "+wordBank.length+" right!");
         return;
     }
-
     currentWord=wordBank[wordIndex];
     wordDisplay.innerHTML = createDisplay(currentWord);
     //changed message board background color to blue
@@ -126,17 +126,12 @@ function newWord(){
     updateField("message-text", "Next Word!")
     //resetting parameters
     guessedArray = [];
-    updateField("guessed-letters",guessedArray);
+    updateLettersGuessedField();
     guessesLeft = 6
     updateField("guesses-left",guessesLeft);
     lettersCorrect = 0;
     //reset stopGame
-    stopGame = false;
-
-    /**/
-
-    
-    
+    stopGame = false;    
 }
 
 // this function generates blanks spaces for each letter in the word
@@ -153,6 +148,14 @@ function createDisplay(word){
 
 function updateField(field, newText){
     document.getElementById(field).innerHTML = newText;
+}
+
+function updateLettersGuessedField(){
+    var text = "";
+    for(var i=0; i < guessedArray.length; i++){
+        text = text + guessedArray[i] + " ";
+        updateField("guessed-letters",text);
+    }
 }
 
 function isLetter(letter){
