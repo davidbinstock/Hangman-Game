@@ -78,7 +78,7 @@ document.onkeyup = function(event){
         //decrease guesses by 1
         guessesLeft--;
         //update guesses left
-        updateLettersGuessedField();
+        updateField("guesses-left",guessesLeft);
         //draw next body part
         drawBodyPart();
      }
