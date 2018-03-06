@@ -109,7 +109,7 @@ document.onkeyup = function(event){
 
 // Create function to generate new word
 function newWord(){
-    var wordBank = ["guitar", "mandolin", "banjo", "violin", "cello", "ukelele", "bass", "viola"];
+    var wordBank = ["susie", "transmogrifier", "spacemanspiff","gross", "calvinball", "stupendousman", "tracerbullet", "toboggan", "duplicator", "misswormwood", "hamsterhuey", "gooeykablooie"];
     console.log(wordIndex)
     console.log(wordBank.length)
     if(wordIndex >= wordBank.length){

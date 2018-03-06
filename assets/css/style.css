@@ -1,23 +1,44 @@
 @font-face {
-    font-family: "musicFont";
-    src: url("../fonts/music.TTF");
+    font-family: "calvin-and-hobbes";
+    src: url("../fonts/calvin_and_hobbes.TTF");
+}
+@font-face {
+    font-family: "comic-font";
+    src: url("../fonts/Patrick_Hand/PatrickHand-Regular.ttf");
+}
+
+.bg-image{
+    position: fixed;
+    z-index: -1;
+    top:-45px;
+    left:0;
+    width: 100%;
+}
+
+.calvin-and-hobbes {
+    font-family: "calvin-and-hobbes";
+    font-size: 5em;
+    margin: .25em;
+    margin-left: 0.5em;
 }
 
 .hangman {
-    font-family: "musicFont";
+    font-family: "calvin-and-hobbes";
     font-size: 4em;
-    text-align: center;
-    margin: .25em;
+    margin: .25em .25em .6em 3em;
+ 
 }
 .game-wrapper{
     max-width: 800px;
     width:100%;
     margin: 0 auto;
     box-sizing: border-box;
+    background: #fcdfc3dc;
 }
 
 #message-board {
     background-color: #3dbaec;
+    opacity: 0.9;
     height: 150px;
     width: 100%;
     border: 2px solid black;
@@ -30,14 +51,14 @@
 }
 
 #message-text{
-    font-family: 'Arvo', serif;
-    font-size: 2em;
+    font-family: "comic-font", cursive;
+    font-size: 2.75em;
     line-height: 1.5em;
     padding: 20px;
 }
 
 .current-word{
-    font-family: 'Arvo', serif;
+    font-family: "comic-font", cursive;
     font-size: 2em;
     text-align: center;
     padding-top: 1em;
@@ -58,7 +79,7 @@
 .letter-holder{
     font-family: 'Arvo', serif;
     font-weight: bold;
-    font-size: 3em;
+    font-size: 2.25em;
     padding: 0 .25em;
     text-align: center;
 
@@ -74,8 +95,8 @@
 
 .scoreboard{
     -background-color: lightblue;
-    font-family: 'Arvo', serif;
-    font-size: 1.25em;
+    font-family: "comic-font", cursive;
+    font-size: 1.5em;
 
     padding-top: 2em;
     flex-grow: 1;
@@ -212,16 +233,26 @@
 /* ========================================================= */
 /* =====adding smoe media queries to make it responsive===== */
 /* ========================================================= */
+@media screen and (max-width: 1200px){
+    .bg-image{
+        width: 1200px;
+    }
+}
+
 @media screen and (max-width: 890px){
+    .calvin-and-hobbes{
+        text-align: center;
+    }
+    .hangman {
+        margin: 0.5em;
+        text-align: center;
+    }
     .game-wrapper{
         width:700px;
     }
 }
 
 @media screen and (max-width: 768px){ 
-    .hangman {
-        margin: 0.5em;
-    }
     .game-wrapper{
         width:600px;
     }
@@ -246,6 +277,9 @@
 }
 
 @media screen and (max-width: 640px){
+    .calvin-and-hobbes {
+        font-size: 12vw;
+    }
     .hangman {
         font-size: 10vw;
     }
@@ -264,7 +298,7 @@
         font-size: 6vw;
     }
     .letter-holder{
-        font-size: 7vw;
+        font-size: 5vw;
     }
     .scoreboard {
         font-size: 4vw;
