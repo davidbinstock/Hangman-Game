@@ -5,7 +5,7 @@ var userGuess = "";
 var wordDisplay = document.getElementById("word-display");
 var lettersCorrect = 0;
 var guessesLeft = 6;
-var guessedArray = [];
+var guessedArray = [""];
 var wins = 0;
 var guessedRight = false;
 var stopGame = false;
@@ -125,7 +125,7 @@ function newWord(){
     //upddate message board
     updateField("message-text", "Next Word!")
     //resetting parameters
-    guessedArray = [];
+    guessedArray = [""];
     updateLettersGuessedField();
     guessesLeft = 6
     updateField("guesses-left",guessesLeft);
@@ -187,9 +187,13 @@ function drawBodyPart(){
         var id = "body-part-"+i;
         document.getElementById(id).style.display = "block";
     }
+    if(guessesLeft==0){
+        document.getElementById("snowman").style.animationName = "swinging"
+    }
 }
 
 function resetDrawing(){
+    document.getElementById("snowman").style.animationName = "";
     for(var i=1; i < 7; i++){
         var id = "body-part-"+i;
         document.getElementById(id).style.display = "none";
